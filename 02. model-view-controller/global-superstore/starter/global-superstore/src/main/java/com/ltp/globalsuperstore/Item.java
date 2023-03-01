@@ -1,10 +1,12 @@
 package com.ltp.globalsuperstore;
 
 import java.util.Date;
+import java.util.UUID;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class Item {
+    private String id;
     private String category;
     private String name;
     private Double price;
@@ -14,6 +16,7 @@ public class Item {
 
 
     public Item(String category, String name, Double price, Double discount, Date date) {
+        this.id = UUID.randomUUID().toString();
         this.category = category;
         this.name = name;
         this.price = price;
@@ -22,6 +25,7 @@ public class Item {
     }
 
     public Item() {
+        this.id = UUID.randomUUID().toString();
     }
 
     public String getCategory() {
@@ -64,4 +68,11 @@ public class Item {
         this.date = date;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }
