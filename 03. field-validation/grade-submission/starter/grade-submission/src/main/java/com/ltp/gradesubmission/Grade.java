@@ -8,8 +8,11 @@ public class Grade {
 
     @NotBlank(message = "Name cannot be blank")
     private String name;
+
     @NotBlank(message = "Subject cannot be blank")
     private String subject;
+
+    @Score(message = "Score must be a letter")
     private String score;
     private String id;
 
